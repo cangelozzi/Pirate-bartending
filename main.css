@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+h3 {
+  color: crimson;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 50px;
+}
+
+#Q1, #Q2, #Q3, #Q4 {
+  display: block;
+  margin-bottom: 30px;
+}
+
+#Q1 {
+  margin-top: -250px;
+  margin-left: 40px;
+}
+
+#Q2, #Q3, #Q4 {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
