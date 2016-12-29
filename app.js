@@ -36,7 +36,7 @@ $(document).ready(function(){
                                          '...with or without ice?'
                                         );
   // Top 5 Bartender ingredients
-  var bartenderIngredients = new Ingredients('Rum', 'Salty Olive', 'Gin', 'Brandy', 'Russian Vodka')
+  var bartenderIngredients = new Ingredients('Rum', 'Salty Olive', 'Gin', 'Brandy', 'Russian Vodka');
   
   // Pirate bartender Pantry
   var pirateBartenderPantry = new Pantry('Whiskey', 'Tequila', 'Vodka', 'Orange Juice', 'Curaçao', 'Sparkiling Wine', 'Cherry on top', 'Campari');
@@ -62,7 +62,9 @@ $(document).ready(function(){
   
   // answers to Bartender questions
   $('form.form').submit (function(event) {
-    event.preventDefault();  
+    event.preventDefault();
+    $('.home').hide();
+    $('.drink, .mixAgain').show();
     var ans1  = $('#Q1').val();
     var ans2  = $('#Q2').val();
     var ans3  = $('#Q3').val();
@@ -74,7 +76,7 @@ $(document).ready(function(){
       quest2: ans2,
       quest3: ans3,
       quest4: ans4
-    }
+    };
     
   // Top 5 Non-Alcohlic ingredients 
     function NonAlcoholicIngredients (noalc1, noalc2, noalc3, noalc4, noalc5) {
@@ -83,16 +85,16 @@ $(document).ready(function(){
       this.noalc3 = noalc3;
       this.noalc4 = noalc4;
       this.noalc5 = noalc5;
-    };
+    }
     
-    var bartenderNonAlcholicIngredients = new NonAlcoholicIngredients ('Ginger Ale', "Pineapple Juice", 'Kiwi Juice', 'Grenadine Syrup', 'Peeled Mango')
+    var bartenderNonAlcholicIngredients = new NonAlcoholicIngredients ('Ginger Ale', "Pineapple Juice", 'Kiwi Juice', 'Grenadine Syrup', 'Peeled Mango');
     
   // Top 3 bartender Fruits  
     function Fruits (f1, f2, f3) {
       this.f1 = f1;
       this.f2 = f2;
-      this.f3 = f3
-    };
+      this.f3 = f3;
+    }
     
     var bartenderFruits = new Fruits ('Cherry', 'Kiwi', 'Pineapple');
   
@@ -101,10 +103,10 @@ $(document).ready(function(){
       this.n1 = n1;
       this.n2 = n2;
       this.n3 = n3;
-      this.n4 = n4
+      this.n4 = n4;
     }
     
-    var drinksName = new Name ('Dry', 'Closure', 'Bloody', 'Function')
+    var drinksName = new Name ('Dry', 'Closure', 'Bloody', 'Function');
     
   // Drinks creator function
     function createDrink () {
@@ -153,9 +155,12 @@ $(document).ready(function(){
       var randomName1 = drinksName[Object.keys(drinksName)[Math.floor(Math.random()*Object.keys(drinksName).length)]];
       var randomName2 = drinksName[Object.keys(drinksName)[Math.floor(Math.random()*Object.keys(drinksName).length)]];
       var drinkName = randomName1 + ' ' + randomName2;
-      var drink = '<li>' + '<h3>' + drinkName + '</h3>=  ' + ingredient1 + ', ' + ingredient2 + ', ' + ingredient3 + ', ' + ingredient4 + '</li>';
+      var drink = '<li>' + '<h3>' + drinkName + '</h3>  ' + ingredient1 + ', ' + ingredient2 + ', ' + ingredient3 + ', ' + ingredient4 + '</li>';
       $(drink).appendTo('.drink ul');
-    };
-   createDrink() 
+      $('.mixAgain').click(function () {
+      document.location.reload(true);                    
+});
+    }
+   createDrink(); 
   });
 });
