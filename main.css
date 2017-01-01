@@ -2,20 +2,27 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 80px;
+  color: burlywood;
 }
 
 h3 {
   color: crimson;
   text-decoration: underline;
   font-style: italic;
+  color: burlywood;
 }
 
 li {
   list-style: none;
   margin-bottom: 50px;
+  color: burlywood;
 }
 
 #Q1, #Q2, #Q3, #Q4 {
